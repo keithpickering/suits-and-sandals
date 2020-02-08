@@ -1,0 +1,24 @@
+html {
+    font-family: $global-font-family;
+    font-size: ($inuit-global-font-size-mobile / 16px) * 1em;
+    line-height: $inuit-global-line-height / $inuit-global-font-size;
+    color: $black;
+    background: $gray-dark;
+
+    @include mq($from: tablet) {
+        font-size: ($inuit-global-font-size / 16px) * 1em;
+        line-height: $inuit-global-line-height / $inuit-global-font-size;
+    }
+
+    &.nav-open {
+        overflow: hidden;
+    }
+
+    &.is-preload * {
+        transition: none 0s;
+    }
+}
+
+body {
+    //overflow-x: hidden;
+}

@@ -1,0 +1,136 @@
+.c-site-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 75vw;
+    padding-top: $spacing;
+    transform: translateX(75vw);
+    transition: transform 400ms ease-in-out;
+    background: $white;
+    box-shadow: $global-box-shadow;
+    z-index: 1;
+
+    @include mq($from: desktop) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: none;
+        left: 0;
+        width: 100%;
+        bottom: auto;
+        padding-top: $spacing-tiny;
+        padding-bottom: $spacing-tiny;
+
+        .o-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        &--scrolled {
+            padding-top: 0;
+            padding-bottom: 0;
+
+            .c-site-nav__logo {
+
+            }
+        }
+    }
+
+    &__items {
+        display: flex;
+        margin-left: auto;
+        margin-bottom: 0;
+    }
+
+    &__item {
+        display: block;
+        padding-top: $spacing-small;
+        padding-right: $spacing;
+        padding-bottom: $spacing-small;
+        padding-left: $spacing;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: $inuit-font-size-h6;
+        color: $gray-warm;
+
+        @include mq($from: tablet) {
+            padding: $spacing;
+        }
+
+        @include mq($from: desktop) {
+            .c-site-nav--scrolled & {
+                padding-top: $spacing-tiny;
+                padding-bottom: $spacing-tiny;
+            }
+        }
+
+        .c-icon {
+            fill: $gray;
+        }
+
+        &:hover,
+        &:focus {
+            color: $primary;
+            //background: darken($white, 2.5%);
+        }
+    }
+
+    &__logo-link {
+        position: relative;
+        margin-right: auto;
+        width: 75px;
+        height: 75px;
+        transition: $global-transition;
+
+        .c-site-nav--scrolled & {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    &__logo {
+        position: absolute;
+        transition: $global-transition;
+        width: 100%;
+
+        &--full {
+            opacity: 1;
+
+            .c-site-nav--scrolled & {
+                opacity: 0;
+            }
+        }
+
+        &--compact {
+            opacity: 0;
+
+            .c-site-nav--scrolled & {
+                opacity: 1;
+            }
+        }
+    }
+
+    .nav-open & {
+        transform: none;
+    }
+}
+
+
+.c-site {
+    transition: transform 400ms ease-in-out;
+
+    .nav-open & {
+        transform: translateX(-75vw);
+    }
+}
+
+body.nav-open {
+    .c-site {
+        transform: translateX(-75vw);
+    }
+
+    .c-site-nav {
+        transform: none;
+    }
+}

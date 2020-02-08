@@ -1,0 +1,124 @@
+.c-article {
+    @extend .c-card;
+    @extend .c-card--light;
+    margin-bottom: $spacing-large;
+    //background: transparent;
+
+    &--single {
+        margin-bottom: 0;
+        @include mq($from: desktop) {
+            padding-left: $spacing-huge;
+            padding-right: $spacing-huge;
+            @include inuit-font-size(20px);
+        }
+    }
+
+    &__header {
+        position: relative;
+        margin-bottom: $spacing;
+        text-align: center;
+
+        @include mq($from: tablet) {
+            margin-bottom: $spacing-large;
+        }
+
+        /*&:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: -30%;
+            width: 60%;
+            height: $spacing-tiny;
+            background: $luigi-gray-light;
+        }*/
+    }
+
+    &__title {
+        color: $primary;
+
+        @include mq($from: desktop) {
+            margin-bottom: $spacing-large;
+            @include inuit-font-size(64px);
+        }
+    }
+
+    &__meta {
+        margin: 0 auto;
+        text-align: center;
+        padding-top: $spacing-small;
+        padding-bottom: $spacing-small;
+        border-radius: $global-radius;
+        background: darken($white, 2%);
+
+        @include mq($from: tablet) {
+            margin-left: -$spacing-large;
+            margin-right: -$spacing-large;
+        }
+
+        .o-grid {
+            margin: 0 auto;
+        }
+
+        .c-meta {
+            text-align: left;
+            border-style: solid;
+            border-color: darken($luigi-gray-light, 5%);
+            border-width: 0;
+            border-bottom-width: 1px;
+            padding-bottom: $spacing-tiny;
+            margin-bottom: $spacing-small;
+
+            @include mq($from: tablet) {
+                border-bottom-width: 0;
+                border-right-width: 1px;
+                padding-bottom: 0;
+                margin-bottom: 0;
+                margin-left: -$spacing-tiny/4;
+            }
+
+            .o-flag {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+
+    &__date {
+        color: $luigi-gray-dark;
+
+        .c-icon {
+            vertical-align: middle;
+            margin-top: -$spacing-tiny/2;
+            margin-right: $spacing-tiny;
+            fill: $luigi-gray-dark;
+        }
+    }
+
+    &__signature {
+        margin-top: $spacing-large;
+        text-align: center;
+
+        > img {
+            display: inline-block;
+            height: $spacing-huge;
+            width: auto;
+        }
+    }
+
+    h1, h2, h3,
+    h4, h5, h6 {
+        color: $primary;
+    }
+
+    a {
+        color: $primary;
+
+        border-bottom: 2px solid $luigi-gray-light;
+
+        &:hover,
+        &:focus {
+            border-color: lighten($secondary, 15%);
+        }
+    }
+}

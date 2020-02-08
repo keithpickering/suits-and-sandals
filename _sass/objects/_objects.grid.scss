@@ -1,0 +1,33 @@
+.o-grid {
+    &--middle {
+        align-items: center;
+    }
+
+    &__cell {
+        transition: transform 400ms ease-in-out,
+                    opacity 400ms ease-in-out;
+
+        &--switch-mobile {
+            @include mq($until: tablet) {
+                order: -1;
+            }
+        }
+
+        &.is-hidden {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+    }
+
+    &--large {
+        @include mq($until: tablet) {
+            margin-left: -$spacing;
+        }
+
+        > .o-grid__cell {
+            @include mq($until: tablet) {
+                padding-left: $spacing;
+            }
+        }
+    }
+}

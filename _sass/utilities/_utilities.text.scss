@@ -1,0 +1,20 @@
+.u-text-center {
+    text-align: center;
+}
+
+.u-text-huge {
+    @include inuit-font-size(64px);
+
+    @include mq($from: tablet) {
+        @include inuit-font-size(96px);
+    }
+}
+
+.u-text-accent {
+    font-family: "Delfino", sans-serif;
+    font-weight: 400;
+}
+
+.u-text-light {
+    color: $white;
+}

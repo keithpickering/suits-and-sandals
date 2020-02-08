@@ -1,0 +1,144 @@
+.c-section {
+    position: relative;
+    //overflow: hidden;
+    padding-top: $spacing-large;
+    padding-bottom: $spacing-large;
+
+    @include mq($from: tablet) {
+        padding-top: $spacing-huge;
+        padding-bottom: $spacing-huge;
+    }
+
+    &__title {
+        margin-bottom: $spacing-large;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+    }
+
+    &:first-of-type {
+        padding-top: $spacing-large;
+
+        @include mq($from: tablet) {
+            padding-top: $spacing-large + $spacing;
+        }
+    }
+
+    &--primary {
+        //background: $luigi-green;
+    }
+
+    &--secondary {
+        background: $gray-dark;
+        color: $white;
+    }
+
+    &--subscribe {
+        border-top: $spacing-small solid $luigi-brown-dark;
+
+        a {
+            color: $luigi-yellow;
+        }
+    }
+
+    &--hero {
+        padding-top: 0 !important;
+        background: radial-gradient(circle at bottom center, rgba(31,206,220,1) 33%, rgba(15,130,209,1) 100%);
+
+        &__intro {
+            min-height: 75vh;
+            padding-top: $spacing-huge;
+            padding-bottom: $spacing-huge;
+            background: url(../img/cloud.svg);
+            background-size: 175% 100%;
+            background-position: 50%;
+
+            @include mq($from: desktop) {
+                min-height: 95vh;
+                background-size: 100% 100%;
+            }
+        }
+
+        &__games {
+            padding-top: $spacing;
+        }
+
+        &__title {
+            margin-bottom: $spacing-huge;
+            text-transform: none;
+            font-size: $inuit-font-size-h2;
+            color: $secondary;
+
+            @include mq($from: tablet) {
+                font-size: $inuit-font-size-h1;
+            }
+
+            > strong {
+                display: block;
+                margin-top: $spacing-small;
+                margin-bottom: $spacing-small;
+                font-size: 2em;
+                font-weight: 400;
+                line-height: 1;
+                text-transform: uppercase;
+                color: $primary;
+            }
+        }
+
+        &__links {
+            text-align: center;
+
+            a {
+                display: block;
+                position: relative;
+                padding: 0 $spacing-small;
+                
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: $spacing-small;
+                    bottom: -$spacing-small;
+                    left: $spacing-small;
+                    right: $spacing-small;
+                    border-radius: 50%;
+                    background: $gray-warm;
+                    opacity: 0;
+                    transition: all 150ms ease-in-out;
+                    filter: blur($spacing-small);
+                }
+
+                &:hover,
+                &:focus {
+                    &:after {
+                        opacity: 0.15;
+                    }
+
+                    img {
+                        transform: none;
+                    }
+                }
+            }
+        }
+
+        &__subtitle {
+            font-weight: 400;
+            font-family: inherit;
+            font-size: $inuit-font-size-h3;
+            text-transform: uppercase;
+            color: $gray-warm;
+        }
+
+        &__icon {
+            display: block;
+            width: $spacing-large;
+            transform: scale(0.9);
+            transition: all 150ms ease-in-out;
+
+            @include mq($from: tablet) {
+                width: $spacing-large + $spacing-small;
+            }
+        }
+    }
+}

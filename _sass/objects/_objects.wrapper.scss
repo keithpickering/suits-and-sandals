@@ -1,0 +1,17 @@
+.o-wrapper {
+    width: 100%;
+    max-width: 1000px;
+
+    &--small {
+        max-width: 840px;
+    }
+
+    &--large {
+        padding: 0;
+
+        @include mq($from: tablet) {
+            padding-left: $spacing;
+            padding-right: $spacing;
+        }
+    }
+}

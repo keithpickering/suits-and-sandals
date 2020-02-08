@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<!doctype html>
+<html lang="en" class="is-animating is-preload">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} &laquo; Suits &amp; Sandals</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700|Fredoka+One">
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="{{ site.baseurl }}/assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="{{ site.baseurl }}/assets/img/favicon/safari-pinned-tab.svg" color="#50a043">
+    <link rel="shortcut icon" href="{{ site.baseurl }}/assets/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="{{ site.baseurl }}/assets/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#50a043">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+</head>
+<body>
+    {% include site-nav.html %}
+
+    <div id="loader" class="c-loader">
+        <div class="c-loader__img"></div>
+    </div>
+
+    <button id="toggle-nav" class="c-toggle-nav">
+        <span class="u-hidden-visually">Menu</span>
+    </button>
+
+    <div id="site" class="c-site">
+        <main id="page-main" class="c-page-main u-transition-fade">
+            {{ content }}
+        </main>
+
+        <footer id="page-foot" class="c-page-foot u-transition-fade">
+            <div class="o-wrapper">
+                &copy;2010&mdash;2020 Suits &amp; Sandals
+            </div>
+        </footer>
+    </div>
+
+    <script src="/assets/js/main.min.js"></script>
+</body>
+</html>

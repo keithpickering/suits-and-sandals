@@ -1,0 +1,16 @@
+.c-page-head {    
+    padding-top: $spacing;
+    
+    @include mq($from: tablet) {
+        padding-top: $spacing-large;
+        text-align: center;
+    }
+
+    &__logo {
+        max-width: 200px;
+
+        @include mq($from: tablet) {
+            max-width: 320px;
+        }
+    }
+}

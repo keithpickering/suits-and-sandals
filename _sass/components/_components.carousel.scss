@@ -1,0 +1,107 @@
+$carousel-mask: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
+
+.c-carousel {
+    position: relative;
+    padding-left: $spacing-large;
+    padding-right: $spacing-large;
+
+    .glide__track {
+        -webkit-mask-image: $carousel-mask;
+        mask-image: $carousel-mask;
+    }
+
+    .glide__slides {
+        margin-left: 0;
+    }
+
+    .glide__slide {
+        > img {
+            display: block;
+            margin: 0 auto;
+            opacity: 0.25;
+            transform: scale(0.75);
+            transition: all 250ms ease-in-out;
+        }
+
+        &--active {
+            > img {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        &--prev,
+        &--next {
+            > img {
+                opacity: 0.5;
+            }
+        }
+
+        &--prev {
+            > img {
+                transform: scale(0.8) translateX(-7.5%);
+            }
+        }
+
+        &--next {
+            > img {
+                transform: scale(0.8) translateX(7.5%);
+            }
+        }
+    }
+
+    .glide__arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: $inuit-font-size-h1;
+        padding: $spacing;
+        background: rgba(white,0.33);
+        border: 0;
+        outline: 0;
+        color: white;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            background: rgba(white,0.25);
+        }
+
+        &--left {
+            left: -$spacing-large;
+            padding-left: $spacing-small;
+            border-radius: 0 200px 200px 0;
+        }
+
+        &--right {
+            right: -$spacing-large;
+            padding-right: $spacing-small;
+            border-radius: 200px 0 0 200px;
+        }
+    }
+
+    &__texts {
+        position: relative;
+        height: 500px;
+    }
+
+    &__text {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%) scale(0.95);
+        width: 100%;
+        max-width: 640px;
+        padding: $spacing-large;
+        text-align: center;
+        opacity: 0;
+        transition: all 250ms ease-in-out;
+
+        &--active {
+            opacity: 1;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+    }
+}

@@ -1,0 +1,61 @@
+.c-credit {
+    position: relative;
+    margin-bottom: $spacing;
+    padding: $spacing;
+
+    &__name {
+        margin-bottom: $spacing-tiny;
+        color: $luigi-blue;
+        @include inuit-font-size($inuit-font-size-h3);
+
+        @include mq($from: desktop) {
+            margin-bottom: 0;
+            @include inuit-font-size($inuit-font-size-h2);
+        }
+    }
+
+    &__title {
+        margin-bottom: $spacing;
+        color: $luigi-gray-dark;
+
+        @include mq($from: desktop) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__meta {
+        font-weight: 700;
+    }
+
+    &__avatar,
+    .o-flag__img > a {
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: $global-radius;
+
+        @include mq($from: tablet) {
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    &__btn {
+        @include mq($from: desktop) {
+            position: absolute;
+            top: 50%;
+            margin-top: -$spacing;
+            right: $spacing;
+            padding: $spacing-small $spacing;
+        }
+    }
+
+    .o-flag__img,
+    .o-flag__body {
+        vertical-align: top;
+
+        @include mq($from: tablet) {
+            vertical-align: middle;
+        }
+    }
+}

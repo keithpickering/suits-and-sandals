@@ -1,0 +1,21 @@
+<section id="newsletters" class="c-section c-section--secondary">
+    <div class="o-wrapper">
+        <h2 class="c-section__title u-h2">
+            News &amp; Updates
+        </h2>
+
+        <div class="c-filter-posts">
+            {% for post in site.posts limit:4 %}
+                {% include article-card.html post=post dark=false %}
+            {% endfor %}
+        </div>
+
+        {% if include.viewmore %}
+            <div class="u-text-center">
+                <a class="c-btn c-btn--primary" href="/newsletter">
+                    News Archive
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</section>

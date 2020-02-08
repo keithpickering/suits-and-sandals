@@ -1,0 +1,22 @@
+img[width],
+img[height] {
+    max-width: 100%;
+}
+
+.lazy {
+    display: block;
+    border: 0;
+    opacity: 0;
+    max-width: 100%;
+    height: auto;
+}
+.lazy {
+    transition: opacity 400ms !important;
+}
+.lazy.loaded,
+.lazy.error {
+    opacity: 1;
+}
+.lazy:not([src]) {
+    visibility: hidden;
+}

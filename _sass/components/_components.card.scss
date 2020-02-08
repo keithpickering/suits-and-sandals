@@ -1,0 +1,117 @@
+.c-card {
+    position: relative;
+    margin-bottom: $spacing-large;
+    padding: $spacing;
+    border-radius: $global-radius;
+    background: $luigi-white;
+    color: $luigi-black;
+
+    @include mq($from: tablet) {
+        padding: $spacing-large;
+    }
+
+    &__content {
+        margin-bottom: $spacing-large;
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &--light {
+        color: $luigi-black;
+        background: $luigi-white;
+        
+        h1, h2, h3,
+        h4, h5, h6 {
+            a {
+                color: $luigi-blue;
+            }
+        }
+    }
+
+    &--dark {
+        color: $luigi-white;
+        background: $luigi-black;
+
+        .c-section--primary & {
+            background: $luigi-green-dark;
+        }
+
+        .c-section--secondary & {
+            background: $luigi-blue-dark;
+        }
+    }
+
+    &--important {
+        background: $luigi-blue-dark !important;
+    }
+
+    &--centered {
+        text-align: center;
+
+        .c-card__content {
+            text-align: left;
+        }
+    }
+
+    &--equal-height {
+        height: calc(100% - #{$spacing-large});
+    }
+
+    &--excerpt {
+        padding: 0;
+        transition: all 400ms ease-in-out;
+        text-align: center;
+
+        &.is-hidden {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        h1, h2, h3,
+        h4, h5, h6 {
+            margin-bottom: $spacing-tiny;
+            color: $white;
+        }
+
+        &__date {
+            color: $gray;
+        }
+
+        &__link {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: $spacing;
+            padding-top: 0;
+            font-weight: inherit;
+            color: inherit;
+
+            @include mq($from: tablet) {
+                padding-left: $spacing-large;
+                padding-right: $spacing-large;
+            }
+        }
+
+        .c-meta {
+            margin-top: auto;
+            margin-left: -$spacing;
+            margin-right: -$spacing;
+            margin-bottom: -$spacing;
+            text-align: center;
+            padding-top: $spacing;
+            padding-right: $spacing-large;
+            padding-bottom: $spacing;
+            padding-left: $spacing-large;
+            background: $gray-darker;
+
+            @include mq($from: tablet) {
+                margin-left: -$spacing-large;
+                margin-right: -$spacing-large;
+                padding-top: $spacing;
+                padding-bottom: $spacing;
+            }
+        }
+    }
+}
