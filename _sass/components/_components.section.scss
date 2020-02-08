@@ -45,15 +45,19 @@
 
     &--hero {
         padding-top: 0 !important;
-        background: radial-gradient(circle at bottom center, rgba(31,206,220,1) 33%, rgba(15,130,209,1) 100%);
+        //background: radial-gradient(circle at bottom center, rgba(31,206,220,1) 33%, rgba(15,130,209,1) 100%);
 
         &__intro {
             min-height: 75vh;
             padding-top: $spacing-huge;
             padding-bottom: $spacing-huge;
             background: url(../img/cloud.svg);
-            background-size: 175% 100%;
+            background-size: 225% 100%;
             background-position: 50%;
+
+            @include mq($from: tablet) {
+                background-size: 175% 100%;
+            }
 
             @include mq($from: desktop) {
                 min-height: 95vh;

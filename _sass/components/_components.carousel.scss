@@ -21,6 +21,11 @@ $carousel-mask: linear-gradient(to right, transparent 0%, black 25%, black 75%, 
             opacity: 0.25;
             transform: scale(0.75);
             transition: all 250ms ease-in-out;
+            height: 200px;
+
+            @include mq($from: tablet) {
+                height: 360px;
+            }
         }
 
         &--active {
@@ -82,7 +87,11 @@ $carousel-mask: linear-gradient(to right, transparent 0%, black 25%, black 75%, 
 
     &__texts {
         position: relative;
-        height: 500px;
+        height: 560px;
+
+        @include mq($from: tablet) {
+            height: 500px;
+        }
     }
 
     &__text {
@@ -93,10 +102,14 @@ $carousel-mask: linear-gradient(to right, transparent 0%, black 25%, black 75%, 
         transform: translateX(-50%) scale(0.95);
         width: 100%;
         max-width: 640px;
-        padding: $spacing-large;
+        padding: $spacing 0;
         text-align: center;
         opacity: 0;
         transition: all 250ms ease-in-out;
+
+        @include mq($from: tablet) {
+            padding: $spacing-large;
+        }
 
         &--active {
             opacity: 1;

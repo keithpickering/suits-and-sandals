@@ -1,17 +1,22 @@
 .c-toggle-nav {
     display: block;
     padding: $spacing-small;
-    position: absolute;
-    top: $spacing-large;
-    right: $spacing;
+    position: fixed;
+    top: $spacing-small;
+    right: $spacing-small;
+    width: 100px;
     z-index: 100;
     border: 0;
-    background: $luigi-green-light;
-    color: $luigi-green-darker;
+    background: $primary;
+    color: $white;
+    border-radius: 100px;
+    text-align: center;
     font-size: $inuit-font-size-h6;
     font-weight: 700;
     text-transform: uppercase;
     transition: $global-transition-long;
+    box-shadow: $global-box-shadow-2;
+    line-height: 1;
     outline: 0;
 
     @include mq($from: desktop) {
@@ -20,9 +25,9 @@
 
     .nav-open & {
         position: fixed;
-        background: $luigi-green-dark;
-        color: $luigi-white;
-        transform: translateY(-$spacing);
+        background: $primary-dark;
+        box-shadow: none;
+        //transform: translateY(-$spacing);
     }
 
     &:before {

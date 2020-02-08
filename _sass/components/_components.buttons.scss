@@ -41,15 +41,26 @@
 }
 
 .c-btn-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
     > .c-btn {
-        margin-right: $spacing;
+        margin-bottom: $spacing-small;
 
         &:last-child {
-            margin-right: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    @include mq($from: tablet) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        > .c-btn {
+            margin-right: $spacing;
+            margin-bottom: 0;
+
+            &:last-child {
+                margin-right: 0;
+            }
         }
     }
 }

@@ -28,8 +28,8 @@
         border: 0;
         border-radius: $global-radius;
         outline: 0;
-        color: $luigi-white;
-        background: $luigi-blue-dark;
+        color: $white;
+        background: $primary;
         cursor: pointer;
         transition: all 400ms;
         @include inuit-font-size($inuit-font-size-h6);
@@ -41,7 +41,7 @@
 
         &:hover,
         &:focus {
-            background: lighten($luigi-blue-dark, 3%);
+            background: $primary-dark;
         }
 
         &:nth-last-child(2) {
@@ -49,7 +49,8 @@
         }
 
         &.is-active {
-            background: $luigi-green-light !important;
+            background: $white !important;
+            color: $primary !important;
         }
 
         &--clear {

@@ -27,6 +27,21 @@ collections:
   games:
     output: true
     permalink: /games/:name
+defaults:
+  - scope:
+      path: ""
+      type: "games"
+    values:
+      layout: "game"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "article"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
 
 # Build settings
 markdown: kramdown

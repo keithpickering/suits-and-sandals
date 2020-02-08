@@ -7,9 +7,9 @@
     padding-top: $spacing;
     transform: translateX(75vw);
     transition: transform 400ms ease-in-out;
-    background: $white;
-    box-shadow: $global-box-shadow;
-    z-index: 1;
+    background: $primary;
+    box-shadow: $global-box-shadow-2;
+    z-index: 10;
 
     @include mq($from: desktop) {
         display: flex;
@@ -21,6 +21,7 @@
         bottom: auto;
         padding-top: $spacing-tiny;
         padding-bottom: $spacing-tiny;
+        background: $white;
 
         .o-wrapper {
             display: flex;
@@ -28,9 +29,6 @@
         }
 
         &--scrolled {
-            padding-top: 0;
-            padding-bottom: 0;
-
             .c-site-nav__logo {
 
             }
@@ -38,9 +36,12 @@
     }
 
     &__items {
-        display: flex;
-        margin-left: auto;
-        margin-bottom: 0;
+        margin: 0;
+
+        @include mq($from: desktop) {
+            display: flex;
+            margin-left: auto;
+        }
     }
 
     &__item {
@@ -52,13 +53,15 @@
         text-transform: uppercase;
         font-weight: 700;
         font-size: $inuit-font-size-h6;
-        color: $gray-warm;
+        color: $white;
 
         @include mq($from: tablet) {
             padding: $spacing;
         }
 
         @include mq($from: desktop) {
+            color: $gray-warm;
+
             .c-site-nav--scrolled & {
                 padding-top: $spacing-tiny;
                 padding-bottom: $spacing-tiny;

@@ -44,7 +44,11 @@ title: Home
                     <ul class="glide__slides">
                         {% for game in site.games %}
                             <li class="glide__slide">
-                                <img alt="{{ game.title }}" src="{{ site.baseurl }}/assets/img/games/{{ game.slug }}/cover.png">
+                                {% if game.thumbnail %}
+                                    <img alt="{{ game.title }}" src="{{ game.thumbnail }}">
+                                {% else %}
+                                    <img alt="{{ game.title }}" src="/assets/img/no-game.png">
+                                {% endif %}
                             </li>
                         {% endfor %}
                     </ul>

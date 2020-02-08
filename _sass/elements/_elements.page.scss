@@ -3,7 +3,7 @@ html {
     font-size: ($inuit-global-font-size-mobile / 16px) * 1em;
     line-height: $inuit-global-line-height / $inuit-global-font-size;
     color: $black;
-    background: $gray-dark;
+    background: $secondary;
 
     @include mq($from: tablet) {
         font-size: ($inuit-global-font-size / 16px) * 1em;
@@ -21,4 +21,33 @@ html {
 
 body {
     //overflow-x: hidden;
+}
+
+.c-site {
+    background: radial-gradient(circle at bottom center, rgba(31,206,220,1) 33%, rgba(15,130,209,1) 100%);
+    @include mq($from: desktop) {
+        margin-top: 94px;
+    }
+}
+
+.c-page-content {
+    min-height: calc(100vh - 94px - 80px)
+}
+
+.c-game-banner {
+    background: $gray-darker;
+    height: 50vh;
+    background-size: cover;
+    background-position: 50% 50%;
+
+    + .c-page-content {
+        padding-top: 0 !important;
+
+        .o-wrapper {
+            @include mq($from: tablet) {
+                position: relative;
+                top: -$spacing-large;
+            }
+        }
+    }
 }

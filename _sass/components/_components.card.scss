@@ -1,12 +1,14 @@
 .c-card {
     position: relative;
-    margin-bottom: $spacing-large;
+    margin-bottom: $spacing;
     padding: $spacing;
     border-radius: $global-radius;
-    background: $luigi-white;
-    color: $luigi-black;
+    background: $white;
+    color: $black;
+    box-shadow: $global-box-shadow;
 
     @include mq($from: tablet) {
+        margin-bottom: $spacing-large;
         padding: $spacing-large;
     }
 
@@ -19,8 +21,8 @@
     }
 
     &--light {
-        color: $luigi-black;
-        background: $luigi-white;
+        color: $black;
+        background: $white;
         
         h1, h2, h3,
         h4, h5, h6 {
