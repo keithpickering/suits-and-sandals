@@ -1,68 +1,4 @@
-@keyframes bounce {
-  0%, 90% {
-    animation-timing-function: linear;
-  }
-  10% {
-    animation-timing-function: cubic-bezier(0, 0.4, 0.6, 1);
-  }
-  50% {
-    animation-timing-function: cubic-bezier(0.4, 0, 1, 0.6);
-  }
-  0% {
-    transform: translate(0%, 30%) scaleY(0.5);
-  }
-  10% {
-    transform: translate(0%, 5%) scaleY(1.1);
-  }
-  50% {
-    transform: translate(0%, -37%) scaleY(1.1);
-  }
-  90% {
-    transform: translate(0%, 5%) scaleY(1.1);
-  }
-  100% {
-    transform: translate(0%, 30%) scaleY(0.5);
-  }
-}
-
-@keyframes rubberBand {
-  from {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-
-  30% {
-    -webkit-transform: scale3d(1.25, 0.75, 1);
-    transform: scale3d(1.25, 0.75, 1);
-  }
-
-  40% {
-    -webkit-transform: scale3d(0.75, 1.25, 1);
-    transform: scale3d(0.75, 1.25, 1);
-  }
-
-  50% {
-    -webkit-transform: scale3d(1.15, 0.85, 1);
-    transform: scale3d(1.15, 0.85, 1);
-  }
-
-  65% {
-    -webkit-transform: scale3d(0.95, 1.05, 1);
-    transform: scale3d(0.95, 1.05, 1);
-  }
-
-  75% {
-    -webkit-transform: scale3d(1.05, 0.95, 1);
-    transform: scale3d(1.05, 0.95, 1);
-  }
-
-  to {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-
-.c-loader {
+.c-loader-wrap {
     position: fixed;
     pointer-events: none;
     top: 0;
@@ -77,16 +13,94 @@
         opacity: 1;
         z-index: 1000;
     }
-
-    &__img {
-        position: absolute;
-        right: $spacing;
-        bottom: $spacing;
-        width: $spacing-large;
-        height: $spacing-large;
-        //margin-left: -$spacing-huge/2;
-        background: url(/assets/img/luigi-hat.svg) no-repeat center center / contain;
-        animation: rubberBand 1000ms infinite;
-    }
 }
+
+.c-loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -40px;
+    margin-left: -40px;
+    width: 80px;
+    height: 80px;
+}
+.c-loader div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.c-loader div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  margin: -4px 0 0 -4px;
+}
+.c-loader div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.c-loader div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.c-loader div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.c-loader div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.c-loader div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.c-loader div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.c-loader div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.c-loader div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.c-loader div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.c-loader div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.c-loader div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.c-loader div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.c-loader div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.c-loader div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.c-loader div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.c-loader div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 

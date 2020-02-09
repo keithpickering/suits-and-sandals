@@ -18,17 +18,17 @@ title: Home
                 </h2>
                 <ul class="o-list-inline">
                     <li class="o-list-inline__item">
-                        <a href="#">
+                        <a href="{{ site.data.settings.links.twitter }}">
                             <img src="/assets/img/social/twitter.svg" class="c-section--hero__icon" alt="Twitter">
                         </a>
                     </li>
                     <li class="o-list-inline__item">
-                        <a href="#">
+                        <a href="{{ site.data.settings.links.discord }}">
                             <img src="/assets/img/social/discord.svg" class="c-section--hero__icon" alt="Discord">
                         </a>
                     </li>
                     <li class="o-list-inline__item">
-                        <a href="#">
+                        <a href="{{ site.data.settings.links.steam }}">
                             <img src="/assets/img/social/steam.svg" class="c-section--hero__icon" alt="Steam">
                         </a>
                     </li>
@@ -80,49 +80,5 @@ title: Home
     </div>
 </section>
 
-<script src="/assets/js/glide.js"></script>
-<script>
-    const glide = new Glide('.glide', {
-        type: 'slider',
-        rewind: false,
-        startAt: 2,
-        perView: 5,
-        focusAt: 'center',
-        gap: 42,
-        breakpoints: {
-            1280: {
-                perView: 3
-            },
-            800: {
-                perView: 1
-            }
-        }
-    });
-
-    const glideTexts = document.querySelectorAll('.c-carousel__text');
-
-    glide.on(['mount.after','run'], function() {
-        const curr = glide._c.Html.slides[glide._i];
-        const prev = curr.previousElementSibling;
-        const next = curr.nextElementSibling;
-        const all  = glide._c.Html.slides.concat(glide._c.Clones.items);
-        all.forEach(function(slide) {
-            slide.classList.remove('glide__slide--prev', 'glide__slide--next');
-        });
-        curr.classList.add('glide__slide--active');
-        if (prev) prev.classList.add('glide__slide--prev');
-        if (next) next.classList.add('glide__slide--next');
-
-        glideTexts.forEach(function(text) {
-            text.classList.remove('c-carousel__text--active');
-        });
-
-        setTimeout(function() {
-            glideTexts[glide._i].classList.add('c-carousel__text--active');
-        }, 350);
-    });
-
-    glide.mount();
-</script>
 
 {% include newsletters.html viewmore="true" %}

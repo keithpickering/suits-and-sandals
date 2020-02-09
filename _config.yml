@@ -33,6 +33,8 @@ defaults:
       type: "games"
     values:
       layout: "game"
+      version: 1.0
+      os: "Windows Vista and up"
   - scope:
       path: ""
       type: "posts"

@@ -87,7 +87,7 @@ $carousel-mask: linear-gradient(to right, transparent 0%, black 25%, black 75%, 
 
     &__texts {
         position: relative;
-        height: 560px;
+        height: 640px;
 
         @include mq($from: tablet) {
             height: 500px;

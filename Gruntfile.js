@@ -9,9 +9,10 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: ['assets/js/lazyload.min.js',
+              'assets/js/glide.js',
               'assets/js/swup.min.js',
               'assets/js/shuffle.min.js',
-              'assets/js/lfgg.js'],
+              'assets/js/suits-sandals.js'],
         dest: 'assets/js/main.js'
       }
     },

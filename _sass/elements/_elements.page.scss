@@ -51,3 +51,63 @@ body {
         }
     }
 }
+
+.small-hr {
+    margin: $spacing-large auto;
+    max-width: 200px;
+    width: 50%;
+    background: $gray-lighter;
+}
+
+h2[id] {
+    position: relative;
+    padding-left: $spacing-large;
+    top: -$spacing-small;
+    padding-top: $spacing-small;
+    margin-bottom: -$spacing-small + $spacing;
+
+    @include mq($from: tablet) {
+        padding-left: 0;
+        top: -$spacing-huge;
+        padding-top: $spacing-huge;
+        margin-bottom: -$spacing-huge + $spacing;
+    }
+
+    .c-permalink {
+        display: block;
+        position: absolute;
+        top: $spacing-small + $spacing-tiny - 2;
+        left: $spacing-small;
+        width: $spacing;
+        height: $spacing;
+        text-decoration: none;
+        border: 0 !important;
+
+        @include mq($from: tablet) {
+            top: $spacing-huge + $spacing-tiny - 2;
+            left: -$spacing -$spacing/2;
+        }
+
+        > svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            fill: $gray-light;
+            transition: $global-transition;
+        }
+
+        &:hover,
+        &:focus {
+            > svg {
+                fill: $gray;
+            }
+        }
+    }
+}
+
+#games {
+    position: relative;
+    top: -$spacing-huge;
+    padding-top: $spacing-huge + $spacing;
+    margin-bottom: -$spacing-huge;
+}

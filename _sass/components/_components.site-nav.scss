@@ -57,6 +57,11 @@
 
         @include mq($from: tablet) {
             padding: $spacing;
+
+            &:hover,
+            &:focus {
+                color: $primary;
+            }
         }
 
         @include mq($from: desktop) {
@@ -70,12 +75,6 @@
 
         .c-icon {
             fill: $gray;
-        }
-
-        &:hover,
-        &:focus {
-            color: $primary;
-            //background: darken($white, 2.5%);
         }
     }
 

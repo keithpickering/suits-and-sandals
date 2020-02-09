@@ -27,8 +27,10 @@ layout: default
 <body>
     {% include site-nav.html %}
 
-    <div id="loader" class="c-loader">
-        <div class="c-loader__img"></div>
+    <div id="loader" class="c-loader-wrap">
+        <div class="c-loader">
+            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+        </div>
     </div>
 
     <button id="toggle-nav" class="c-toggle-nav">
@@ -47,6 +49,6 @@ layout: default
         </footer>
     </div>
 
-    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
 </html>

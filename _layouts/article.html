@@ -2,6 +2,11 @@
 layout: default
 ---
 
+{% if page.banner %}
+    <div class="c-game-banner" style="background-image:url({{ page.banner }})">
+    </div>
+{% endif %}
+
 <section id="page-content" class="c-section c-section--primary c-page-content">
     <div class="o-wrapper o-wrapper--large">
         <div class="o-grid o-grid--large">
@@ -86,3 +91,7 @@ layout: default
 </section>
 
 {% include newsletters.html viewmore="true" %}
+
+<div id="permalink-svg" style="display:none">
+    {% include icons/icon-permalink.svg %}
+</div>

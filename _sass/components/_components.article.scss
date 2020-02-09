@@ -6,9 +6,13 @@
 
     &--single {
         margin-bottom: 0;
+        padding-top: $spacing-large;
+        padding-bottom: $spacing-large;
         @include mq($from: desktop) {
             padding-left: $spacing-huge;
             padding-right: $spacing-huge;
+            padding-top: $spacing-large + $spacing;
+            padding-bottom: $spacing-large + $spacing;
             @include inuit-font-size(20px);
         }
     }
@@ -30,17 +34,27 @@
             margin-left: -30%;
             width: 60%;
             height: $spacing-tiny;
-            background: $luigi-gray-light;
+            background: $gray-light;
         }*/
     }
 
     &__title {
+        margin-bottom: $spacing-large;
         color: $primary;
 
         @include mq($from: desktop) {
-            margin-bottom: $spacing-large;
-            @include inuit-font-size(64px);
+            @include inuit-font-size(64px, $spacing-large + $spacing-small);
         }
+    }
+
+    &__subtitle {
+        margin-top: -$spacing-small;
+        margin-bottom: $spacing-large;
+        font-size: $inuit-font-size-h3;
+        text-align: justify;
+        text-align-last: center;
+        color: $gray-warm;
+        position: relative;
     }
 
     &__meta {
@@ -63,7 +77,7 @@
         .c-meta {
             text-align: left;
             border-style: solid;
-            border-color: darken($luigi-gray-light, 5%);
+            border-color: darken($gray-light, 5%);
             border-width: 0;
             border-bottom-width: 1px;
             padding-bottom: $spacing-tiny;
@@ -85,13 +99,13 @@
     }
 
     &__date {
-        color: $luigi-gray-dark;
+        color: $gray-dark;
 
         .c-icon {
             vertical-align: middle;
             margin-top: -$spacing-tiny/2;
             margin-right: $spacing-tiny;
-            fill: $luigi-gray-dark;
+            fill: $gray-dark;
         }
     }
 
@@ -111,10 +125,10 @@
         color: $primary;
     }
 
-    a {
+    a:not(.c-btn) {
         color: $primary;
 
-        border-bottom: 2px solid $luigi-gray-light;
+        border-bottom: 2px solid $gray-light;
 
         &:hover,
         &:focus {

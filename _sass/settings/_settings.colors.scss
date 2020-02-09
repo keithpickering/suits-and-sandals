@@ -23,6 +23,8 @@ $white: #f1f1f2;
 $gray: #9696a9;
 $gray-dark: #474751;
 $gray-darker: #3f3f48;
+$gray-light: lighten(#9696a9, 10%);
+$gray-lighter: lighten(#9696a9, 28%);
 $gray-warm: #878682;
 $black: $luigi-black;
 $secondary: #1d8bcb;

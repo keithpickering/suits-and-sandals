@@ -28,6 +28,16 @@
         font-size: $inuit-font-size-h3;
     }
 
+    .c-article &:not(.c-btn--primary) {
+        background: $gray-lighter;
+        box-shadow: none;
+
+        &:hover,
+        &:focus {
+            background: darken($gray-lighter, 5%);
+        }
+    }
+
     &--primary {
         background: $primary;
         color: white;
@@ -43,6 +53,8 @@
 .c-btn-group {
     > .c-btn {
         margin-bottom: $spacing-small;
+        width: 100%;
+        max-width: 280px;
 
         &:last-child {
             margin-bottom: 0;
@@ -57,6 +69,8 @@
         > .c-btn {
             margin-right: $spacing;
             margin-bottom: 0;
+            width: auto;
+            max-width: none;
 
             &:last-child {
                 margin-right: 0;
