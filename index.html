@@ -19,17 +19,17 @@ title: Home
                 <ul class="o-list-inline">
                     <li class="o-list-inline__item">
                         <a href="{{ site.data.settings.links.twitter }}">
-                            <img src="/assets/img/social/twitter.svg" class="c-section--hero__icon" alt="Twitter">
+                            <img src="{{ site.baseurl }}/assets/img/social/twitter.svg" class="c-section--hero__icon" alt="Twitter">
                         </a>
                     </li>
                     <li class="o-list-inline__item">
                         <a href="{{ site.data.settings.links.discord }}">
-                            <img src="/assets/img/social/discord.svg" class="c-section--hero__icon" alt="Discord">
+                            <img src="{{ site.baseurl }}/assets/img/social/discord.svg" class="c-section--hero__icon" alt="Discord">
                         </a>
                     </li>
                     <li class="o-list-inline__item">
                         <a href="{{ site.data.settings.links.steam }}">
-                            <img src="/assets/img/social/steam.svg" class="c-section--hero__icon" alt="Steam">
+                            <img src="{{ site.baseurl }}/assets/img/social/steam.svg" class="c-section--hero__icon" alt="Steam">
                         </a>
                     </li>
                 </ul>
@@ -47,7 +47,7 @@ title: Home
                                 {% if game.thumbnail %}
                                     <img alt="{{ game.title }}" src="{{ game.thumbnail }}">
                                 {% else %}
-                                    <img alt="{{ game.title }}" src="/assets/img/no-game.png">
+                                    <img alt="{{ game.title }}" src="{{ site.baseurl }}/assets/img/no-game.png">
                                 {% endif %}
                             </li>
                         {% endfor %}
@@ -71,7 +71,7 @@ title: Home
                         <p>{{ game.shortdesc }}</p>
                         <div class="c-btn-group">
                             <a href="{{ game.download }}" class="c-btn c-btn--primary">Download</a>
-                            <a href="{{ game.url }}" class="c-btn">More Info</a>
+                            <a href="{{ game.url | prepend:site.baseurl }}" class="c-btn">More Info</a>
                         </div>
                     </article>
                 {% endfor %}

@@ -1,7 +1,7 @@
 ---
 title: Mandew vs the Colorless Curse
-thumbnail: "/assets/img/games/mandew-colorless-curse/cover.png"
-banner: "/assets/img/games/mandew-colorless-curse/cover.png"
+thumbnail: "/suits-and-sandals/assets/img/games/mandew-colorless-curse/cover.png"
+banner: "/suits-and-sandals/assets/img/games/mandew-colorless-curse/cover.png"
 download: https://google.com
 manual: https://google.com
 version: 2.2
